@@ -63,8 +63,17 @@ header {
   .introduction {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;  
+    align-items: flex-end;  
+    
+    p {
+      text-align: start;
+      margin-bottom: 1.7em;
+      }
   }
+
+    img {
+      width: 69.4em;
+    }
 }
 
 section { 

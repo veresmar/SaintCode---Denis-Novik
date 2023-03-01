@@ -56,7 +56,14 @@ header {
 header .introduction {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
+}
+header .introduction p {
+  text-align: start;
+  margin-bottom: 1.7em;
+}
+header img {
+  width: 69.4em;
 }
 
 section {
