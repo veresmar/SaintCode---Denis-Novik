@@ -93,10 +93,8 @@ header .introduction p {
 header img {
   width: 70em;
   height: 30em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  object-fit: cover;
+  object-position: top;
 }
 header h1 {
   margin-bottom: 0.5em;
@@ -269,4 +267,6 @@ footer .comment {
   src: url("./font/gilroy-bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
