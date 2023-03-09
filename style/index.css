@@ -93,8 +93,15 @@ header .introduction p {
 header img {
   width: 70em;
   height: 30em;
-  object-fit: cover;
-  object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  header img {
+    width: 20em;
+  }
 }
 header h1 {
   margin-bottom: 0.5em;
@@ -104,6 +111,15 @@ section {
   padding-top: 4em;
   padding-bottom: 4em;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  section {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  section a {
+    font-size: 1.2em;
+  }
+}
 
 .nav-mobile {
   display: flex;
@@ -111,27 +127,28 @@ section {
   align-items: flex-end;
 }
 
+.menu__btn {
+  position: absolute;
+  width: 2.2em;
+  height: auto;
+  right: 2em;
+  top: 1.4em;
+}
+.menu__btn img:first-child {
+  display: block;
+}
+.menu__btn img:last-child {
+  display: none;
+}
+.menu__btn img:last-child:active {
+  display: block;
+}
+
 #menu__toggle {
   opacity: 0;
 }
-
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
-}
-
-#menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
-  left: 0;
 }
 
 .menu__btn > span,
@@ -160,9 +177,9 @@ section {
   position: fixed;
   visibility: hidden;
   top: 0;
-  left: -100%;
-  width: 300px;
+  left: 0.01em;
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 80px 0;
   list-style: none;
@@ -195,15 +212,32 @@ section {
 #skills h2 {
   margin-bottom: 2em;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #skills h2 {
+    margin-bottom: 1em;
+  }
+}
 #skills .program-icons {
   display: flex;
   justify-content: space-around;
   margin-top: 4em;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #skills .program-icons {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+  }
+}
 #skills .program-icons figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #skills .program-icons figure {
+    margin-bottom: 3em;
+  }
 }
 #skills .program-icons figure img:first-of-type {
   max-width: 5em;
@@ -213,6 +247,11 @@ section {
   color: #828282;
   margin-top: 1.5em;
   margin-bottom: 3em;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #skills .program-icons figure figcaption {
+    margin-bottom: 2em;
+  }
 }
 
 #portfolio {
@@ -226,12 +265,27 @@ section {
 #portfolio figure:first-of-type {
   margin-top: 3.5em;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #portfolio figure {
+    margin-top: 4em;
+  }
+}
 #portfolio figure img {
   margin-bottom: 2.5em;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  #portfolio figure img {
+    width: 21em;
+  }
 }
 
 footer {
   padding-bottom: 8em;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  footer {
+    padding-bottom: 4em;
+  }
 }
 footer .button {
   background-color: #070707;
@@ -244,16 +298,33 @@ footer .button {
   margin-top: 1em;
   cursor: pointer;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  footer .button {
+    width: 23em;
+  }
+}
 footer .app-icons {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   max-width: 29em;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  footer .app-icons {
+    justify-content: space-between;
+    margin-top: 0.5em;
+  }
+}
 footer .comment {
   margin-top: 3em;
   font-size: 0.8em;
   color: #828282;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  footer .comment {
+    margin-top: 2em;
+    font-size: 1em;
+  }
 }
 
 @font-face {
@@ -267,6 +338,4 @@ footer .comment {
   src: url("./font/gilroy-bold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

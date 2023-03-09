@@ -101,9 +101,11 @@ header {
       height: 30em;
       object-fit: cover;
       object-position: top;
-      @media #{$media} and ($feature: $value) { 
 
-       }
+      @media #{$media} and ($feature: $value) { 
+        width: 20em;
+        
+      }
 
     }
 
@@ -115,6 +117,15 @@ header {
 section { 
   padding-top: 4em;
   padding-bottom: 4em;
+
+  @media #{$media} and ($feature: $value) { 
+      padding-top: 2em;
+      padding-bottom: 2em;
+
+      a {
+        font-size: 1.2em;
+      }
+    }
 }
 
 // mobile burger-menu
@@ -123,27 +134,77 @@ section {
   justify-content: flex-end;
   align-items: flex-end;
 }
+.menu__btn {
+
+  position: absolute;
+    width: 2.2em;
+    height: auto;
+    right: 2em;
+    top: 1.4em;
+  img {
+
+        &:first-child {
+          display: block;
+          
+        }
+        &:last-child {
+            display:none;
+
+            &:active {
+              display: block;
+            }
+          }
+      }
+}
 
 #menu__toggle {
   opacity: 0;
+	&:checked {
+		& ~ label.menu__btn {
+      
+			// & > span {
+      //   cursor:pointer;
+			// 	transform: rotate(45deg);
+			// 	&::before {
+      //     cursor:pointer;
+			// 		top: 0;
+			// 		transform: rotate(0);
+			// 	}
+			// 	&::after {
+      //     content: url(style/img/menu-x.png);
+      //     cursor:pointer;
+			// 		top: 0;
+			// 		transform: rotate(90deg);
+			// 	}
+			// }
+		}
+		& ~ .menu__box {
+			visibility: visible;
+			
+      
+		}
+	}
 }
-
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
-}
-#menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-#menu__toggle:checked ~ .menu__box {
-  visibility: visible;
-  left: 0;
-}
-
+// #menu__toggle:checked ~ .menu__btn > span {
+//   transform: rotate(45deg);
+// }
+// #menu__toggle:checked ~ .menu__btn > span::before {
+//   top: 0;
+//   transform: rotate(0);
+// }
+// #menu__toggle:checked ~ .menu__btn > span::after {
+//   top: 0;
+//   transform: rotate(90deg);
+// }
+// #menu__toggle:checked ~ .menu__box {
+//   visibility: visible;
+//   left: 0;
+// }
+// #menu__toggle{
+//   &:checked ~ .menu__btn > span {
+//     transform: rotate(45deg);
+//   }
+// }
 // .menu__btn {
 //   display: flex;
 //   align-items: center;
@@ -185,10 +246,10 @@ section {
   position: fixed;
   visibility: hidden;
   top: 0;
-  left: -100%;
-
-  width: 300px;
+  left: 0.01em;
+ 
   height: 100%;
+  width: 100%;
 
   margin: 0;
   padding: 80px 0;
@@ -234,16 +295,31 @@ section {
 #skills {
   h2 {
     margin-bottom: 2em;
+
+    @media #{$media} and ($feature: $value) { 
+      margin-bottom: 1em;
+    }
   }
+
   .program-icons {
     display: flex;
     justify-content: space-around;
     margin-top: 4em;
 
+    @media #{$media} and ($feature: $value) { 
+        flex-direction: column;
+        align-items: center;
+        margin-top:2em;
+      }
+
     figure {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+    @media #{$media} and ($feature: $value) { 
+        margin-bottom: 3em;
+      }
       
       img {
 
@@ -257,6 +333,10 @@ section {
         color: #828282;
         margin-top: 1.5em;
         margin-bottom: 3em;
+        
+        @media #{$media} and ($feature: $value) { 
+        margin-bottom: 2em;
+      }
       }
     }
   }
@@ -273,14 +353,26 @@ section {
       margin-top: 3.5em;
     }
 
+    @media #{$media} and ($feature: $value) { 
+      margin-top: 4em;
+    }
+
    img {
     margin-bottom: 2.5em;
+
+    @media #{$media} and ($feature: $value) { 
+        width: 21em;        
+      }
    }
   }  
 }
 
 footer {
   padding-bottom: 8em;
+
+  @media #{$media} and ($feature: $value) { 
+     padding-bottom: 4em;
+    }
 
   .button {
     background-color: #070707;
@@ -292,17 +384,30 @@ footer {
     border: none;
     margin-top: 1em;
     cursor: pointer;
+    
+    @media #{$media} and ($feature: $value) { 
+     width: 23em;
+    }
   }
   .app-icons {
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     max-width: 29em;
+    @media #{$media} and ($feature: $value) { 
+      justify-content: space-between;
+      margin-top: 0.5em;
+    }
   }
   .comment {
     margin-top: 3em;
     font-size: 0.8em;
     color: #828282;
+
+    @media #{$media} and ($feature: $value) { 
+     margin-top: 2em;
+      font-size: 1em;
+    }
   }
 }
 
