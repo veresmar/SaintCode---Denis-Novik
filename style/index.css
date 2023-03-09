@@ -129,19 +129,18 @@ section {
 
 .menu__btn {
   position: absolute;
+  z-index: 10;
   width: 2.2em;
   height: auto;
   right: 2em;
   top: 1.4em;
+  background-color: red;
 }
-.menu__btn img:first-child {
-  display: block;
+.menu__btn::before {
+  content: url(./img/menu.png);
 }
-.menu__btn img:last-child {
-  display: none;
-}
-.menu__btn img:last-child:active {
-  display: block;
+.menu__btn::after {
+  content: url(./img/menu-x.png);
 }
 
 #menu__toggle {
@@ -151,25 +150,27 @@ section {
   visibility: visible;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-  display: block;
-  position: absolute;
-  width: 2em;
-  height: 2px;
-  background-color: #616161;
-  transition-duration: 0.25s;
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
 }
 
-.menu__btn > span::before {
-  content: "";
-  top: -8px;
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
 }
 
-.menu__btn > span::after {
-  content: "";
-  top: 8px;
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
 }
 
 .menu__box {
